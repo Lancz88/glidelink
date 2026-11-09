@@ -12,6 +12,10 @@ LOCAL DEVELOPMENT / INSTALL
    Use X or Hide window to hide the window while keeping the panel running (live test required).
 
 BUILD
+Hidden windows skip diagnostic JSON formatting and status DOM updates. Telemetry,
+heartbeat and flight-plan requests continue normally. Reopening immediately shows
+the latest diagnostics. Source change: run the usual manual build before installing.
+
 The user runs SDK builds manually. Codex must not invoke the SDK build unless asked.
 Run build-addon.cmd from this folder (MSFS SDK required).
 The script finds the workspace SDK in ..\lib, or falls back to C:\MSFS SDK.

@@ -35,13 +35,17 @@
         this.listener = null;
         this.pending = null;
         this.running = false;
+        this.displayEnabled = true;
         this.genericAttempted = false;
         this.diag = { version: "0.3.0", genericReady: false, flowReady: false,
             genericFunctionAvailable: false, genericInitState: "not-started", genericError: null,
             sentRequests: 0, lastTransport: null, lastFbwTopic: null,
             receivedPackages: 0, receivedFbwEvents: 0, state: "starting", lastError: null };
     }
-    Reader.prototype.show = function () { this.render(JSON.stringify(this.diag, null, 2)); };
+    Reader.prototype.show = function () {
+        // Keep telemetry/polling alive while avoiding hidden diagnostic serialization and DOM writes.
+        if (this.displayEnabled) this.render(JSON.stringify(this.diag, null, 2));
+    };
 
     // Telemetry is optional: a missing API or individual read must never interrupt polling.
     function readNumber(name, unit) {
@@ -243,6 +247,10 @@
                 this.windowEventsBound = true;
                 frame.addEventListener("panelActive", () => {
                     frame.style.display = "";
+                    if (this.reader) {
+                        this.reader.displayEnabled = true;
+                        this.reader.show();
+                    }
                     this.setupWindow();
                 });
                 var hide = this.querySelector("#hide-panel");
@@ -264,6 +272,7 @@
         hideWindow() {
             var frame = this.querySelector("ingame-ui");
             if (frame) frame.style.display = "none";
+            if (this.reader) this.reader.displayEnabled = false;
         }
         connectedCallback() {
             super.connectedCallback();

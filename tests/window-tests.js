@@ -13,7 +13,9 @@ function runWindowTests(source) {
     var frame = { style: {}, addEventListener: function (name, callback) { listeners[name] = callback; },
         querySelector: function () { return headerReady ? close : null; } };
     var panel = new module.exports.DescPlanPanel();
-    panel.reader = { running: true };
+    var renders = 0;
+    panel.reader = new module.exports.Reader(function () { renders++; });
+    panel.reader.running = true;
     panel.querySelector = function (selector) {
         return selector === "ingame-ui" ? frame : {
             addEventListener: function (name, callback) { hideEvents[name] = callback; }
@@ -30,10 +32,20 @@ function runWindowTests(source) {
         stopImmediatePropagation: function () { stopped = true; } });
     check(prevented && stopped && frame.style.display === "none", "X hides frame and suppresses normal close");
     check(panel.reader.running, "hide leaves reader running");
+    var beforeHidden = renders;
+    panel.reader.diag.toJSON = function () { throw new Error("hidden diagnostics serialized"); };
+    panel.reader.show();
+    check(renders === beforeHidden, "hidden updates skip serialization and rendering");
+    delete panel.reader.diag.toJSON;
+    panel.reader.diag.state = "updated while hidden";
     listeners.panelActive();
     check(frame.style.display === "", "reactivation restores frame");
+    check(renders === beforeHidden + 1, "reactivation immediately renders latest diagnostics");
+    check(panel.reader.diag.state === "updated while hidden", "hidden diagnostics remain current");
     hideEvents.click();
     check(frame.style.display === "none" && panel.reader.running, "fallback hide button also retains reader");
+    panel.reader.show();
+    check(renders === beforeHidden + 1, "fallback hide also suppresses rendering");
     return "PASS: " + checks + " panel window checks (mocked header)";
 }
 if (typeof require !== "undefined" && require.main === module) {
