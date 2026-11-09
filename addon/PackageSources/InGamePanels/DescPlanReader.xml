@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SimBase.Document Type="InGamePanels" version="1,0">
+  <Filename>DescPlanReader.spb</Filename>
+  <InGamePanels.InGamePanelDefinition id="PANEL_DESC_PLAN_READER" Name="GlideLink"
+    url="html_ui/InGamePanels/DescPlanReader/DescPlanReader.html"
+    resizeDirections="Both" minWidth="30" minHeight="25" defaultWidth="45" defaultHeight="40"
+    defaultTop="10" defaultRight="5" icon="ICON_TOOLBAR_DESC_PLAN_READER" buttonVisible="true" />
+</SimBase.Document>

@@ -1,0 +1,11 @@
+/* Outer layers ignore mouse input; only the visible frame is interactive. */
+html, body { width:100%; margin:0; pointer-events:none; background:transparent; }
+ingamepanel-desc-plan-reader { display:block; pointer-events:none; }
+ingame-ui#DescPlanReader { pointer-events:auto; }
+main { padding:18px; color:#faf5ee; background:#172639; height:100%; overflow:auto; font:16px sans-serif; }
+h1 { font-size:23px; color:#f2c6a3; margin-top:0; }
+p { line-height:1.5; color:#c6c7cc; }
+strong { color:#faf5ee; }
+button { padding:10px 14px; background:#f2c6a3; color:#172639; border:0; border-radius:5px; cursor:pointer; }
+button:disabled { opacity:.5; cursor:wait; }
+pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#0d1b2b; padding:12px; font:12px/1.5 monospace; }

@@ -1,0 +1,15 @@
+{
+  "dependencies": [],
+  "content_type": "MISC",
+  "title": "GlideLink",
+  "manufacturer": "Local",
+  "creator": "Local",
+  "package_version": "0.3.0",
+  "minimum_game_version": "1.39.12",
+  "release_notes": {
+    "neutral": {
+      "LastUpdate": "",
+      "OlderHistory": ""
+    }
+  }
+}

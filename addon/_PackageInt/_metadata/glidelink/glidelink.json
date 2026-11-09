@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "valid": false,
+    "errors": {
+      "misc": [
+        "Invalid Package Name 'glidelink'. Package name should be in the form 'aaa-bbb-...-xxx', only contain lower case letters or digits and cannot end with '-group'"
+      ]
+    }
+  },
+  "manifest": {
+    "valid": true,
+    "package_title": "GlideLink",
+    "package_content_type": "MISC",
+    "package_version": "0.3.0",
+    "package_minimum_game_version": "1.39.12"
+  },
+  "layout": {
+    "valid": true,
+    "num_directories": 0,
+    "num_files": 5
+  }
+}

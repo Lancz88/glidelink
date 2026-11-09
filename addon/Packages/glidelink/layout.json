@@ -1,0 +1,29 @@
+{
+  "content": [
+    {
+      "path": "html_ui/icons/toolbar/ICON_TOOLBAR_DESC_PLAN_READER.svg",
+      "size": 362,
+      "date": 134386444862061965
+    },
+    {
+      "path": "html_ui/InGamePanels/DescPlanReader/DescPlanReader.css",
+      "size": 774,
+      "date": 134386444861982171
+    },
+    {
+      "path": "html_ui/InGamePanels/DescPlanReader/DescPlanReader.html",
+      "size": 1569,
+      "date": 134386414613117394
+    },
+    {
+      "path": "html_ui/InGamePanels/DescPlanReader/DescPlanReader.js",
+      "size": 15612,
+      "date": 134386414609521884
+    },
+    {
+      "path": "InGamePanels/DescPlanReader.spb",
+      "size": 689,
+      "date": 134386446890010123
+    }
+  ]
+}

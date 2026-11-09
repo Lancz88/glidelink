@@ -1,0 +1,8 @@
+<CommandsInputs>
+	<File Path="C:\lance stuff\codex-workspace\glidelink\addon\PackageSources\InGamePanels\DescPlanReader.xml" Failure="0">
+		<Package Name="glidelink" Failure="0">
+			<AssetGroup Name="PanelRegistration"/>
+		</Package>
+	</File>
+</CommandsInputs>
+

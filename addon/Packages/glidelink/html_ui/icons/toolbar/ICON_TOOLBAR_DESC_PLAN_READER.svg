@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Titre" width="64" height="64" viewBox="0 0 64 64">
+  <title>GlideLink</title>
+  <!-- Closed filled contours avoid unwanted fills from toolbar styling. -->
+  <g id="HIGHLIGHT" fill="white">
+    <path d="M7 17C25 17 28 39 45 39H49V34L59 41 49 48V43H45C25 43 22 21 7 21Z"/>
+    <path d="M8 51H56V55H8Z"/>
+
+  </g>
+</svg>

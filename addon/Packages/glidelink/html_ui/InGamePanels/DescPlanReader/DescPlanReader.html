@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="/SCSS/common.css" />
+  <link rel="stylesheet" href="DescPlanReader.css" />
+  <script src="/JS/coherent.js"></script>
+  <script src="/JS/common.js"></script>
+  <script src="/JS/dataStorage.js"></script>
+  <script src="/JS/buttons.js"></script>
+  <script src="/JS/Services/ToolBarPanels.js"></script>
+  <script src="/JS/Services/ViewListener.js"></script>
+  <script src="/JS/SimVar.js"></script>
+  <script src="/JS/Services/GenericDataListener.js"></script>
+  <link rel="import" href="/templates/ingameUi/ingameUi.html" />
+  <link rel="import" href="/templates/ingameUiHeader/ingameUiHeader.html" />
+  <script src="DescPlanReader.js"></script>
+</head>
+<body class="border-box">
+  <ingamepanel-desc-plan-reader>
+    <ingame-ui id="DescPlanReader" panel-id="PANEL_DESC_PLAN_READER" title="GlideLink" class="ingameUiFrame panelInvisible" content-fit="false" min-width="300" min-height="230">
+      <main>
+        <h1>GlideLink</h1>
+        <p>Connect your active MCDU route to your descent planner. Hide this window with X to keep GlideLink running.</p>
+        <p>Local app: <strong>127.0.0.1:8080</strong></p>
+        <button id="read-plan">Check active plan</button>
+        <button id="hide-panel">Hide window</button>
+        <p>To show the window again, toggle the GlideLink toolbar icon off and on. Turning the toolbar icon off disconnects GlideLink.</p>
+        <pre id="status">Starting...</pre>
+      </main>
+    </ingame-ui>
+  </ingamepanel-desc-plan-reader>
+</body>
+</html>
